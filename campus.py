@@ -9,3 +9,10 @@ def peut_inscrire(inscrits: int, capacite: int) -> bool:
     if capacite < 0 or inscrits < 0 or inscrits > capacite:
         raise ValueError("inscrits et capacité doivent être dans le domaine valide")
     return inscrits < capacite
+
+
+def places_restantes(inscrits: int, capacite: int) -> int:
+    """Calcule les places disponibles après validation du domaine métier."""
+    if capacite < 0 or inscrits < 0 or inscrits > capacite:
+        raise ValueError("inscrits et capacité doivent être dans le domaine valide")
+    return capacite - inscrits
