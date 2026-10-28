@@ -24,3 +24,12 @@ def normaliser_nom(nom: str) -> str:
     if not nom_normalise:
         raise ValueError("le nom ne peut pas être vide")
     return nom_normalise
+
+
+def taux_remplissage(inscrits: int, capacite: int) -> float:
+    """Renvoie le pourcentage de remplissage après validation du domaine métier."""
+    if capacite < 0 or inscrits < 0 or inscrits > capacite:
+        raise ValueError("inscrits et capacité doivent être dans le domaine valide")
+    if capacite == 0:
+        return 0.0
+    return inscrits / capacite * 100
